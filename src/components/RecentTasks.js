@@ -44,7 +44,7 @@ function RecentTasks({ tasks }) {
           <FaRegClock size={20} className='text-blue-600 mt-1' />
           <h1 className='text-2xl font-semibold text-blue-600'>RecentTasks</h1>
         </div>
-        <GlassButton openModal={openModal} />
+        <GlassButton text='Add Task' openModal={openModal} />
       </div>
 
       <div className='overflow-x-auto relative shadow-md rounded-lg glass'>

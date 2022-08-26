@@ -13,7 +13,7 @@ function EmptyMessage({ openModal }) {
         <h3 className='text-xl font-semibold'>No task found</h3>
       </div>
       <div className='flex justify-center'>
-        <GlassButton openModal={openModal} />
+        <GlassButton text='Add Now' openModal={openModal} />
       </div>
     </div>
   );

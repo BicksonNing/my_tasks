@@ -82,7 +82,7 @@ function TaskForm({ isUpdate, selectedData, isOpen, setIsOpen, setIsUpdate }) {
       closeModal();
       setLoading(false);
       clearState();
-    }, 10);
+    }, 1);
   };
 
   // Update Task
@@ -103,7 +103,7 @@ function TaskForm({ isUpdate, selectedData, isOpen, setIsOpen, setIsUpdate }) {
       closeModal();
       setLoading(false);
       clearState();
-    }, 100);
+    }, 1);
   };
 
   return (

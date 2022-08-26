@@ -1,11 +1,11 @@
 import React from "react";
 import { GrFormAdd } from "react-icons/gr";
 
-function GlassButton({ openModal }) {
+function GlassButton({ text, openModal }) {
   return (
     <button className='btn glass' onClick={openModal}>
       <GrFormAdd size={24} />
-      <span className='font-semibold'>Add Task</span>
+      <span className='font-semibold'> {text}</span>
     </button>
   );
 }
