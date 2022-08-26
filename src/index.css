@@ -1,13 +1,32 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
+.btn-link {
+    @apply hover:text-blue-600 hover:bg-blue-50 p-2 rounded-lg font-semibold cursor-pointer;
+  }
+
+.active-link {
+    @apply px-5 py-1 w-full font-semibold text-lg flex items-center space-x-4 cursor-pointer hover:text-blue-700 border-r-4 border-blue-600 transition-all ease-in-out text-blue-600  
+  }
+
+.in-active-link {
+    @apply px-5 py-1 w-full font-semibold text-lg flex items-center space-x-4 cursor-pointer hover:text-blue-700 transition-all ease-in-out text-gray-600 active:scale-105
+ }
+
+.btn {
+  @apply flex items-center space-x-1 px-4 py-2 rounded-lg hover:shadow-lg active:scale-90 transition duration-150
+ }
+
+ .btn-submit {
+  @apply inline-flex items-center space-x-3 justify-center rounded-md border border-transparent bg-blue-100 px-5 py-3 w-full text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2
+ }
+
+ .btn-loading {
+  @apply inline-flex items-center space-x-3 justify-center rounded-md border border-transparent bg-blue-100 px-5 py-3 w-full text-sm font-medium text-blue-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-wait
+ }
+
+ .btn-disabled {
+  @apply inline-flex items-center space-x-3 justify-center rounded-md border border-transparent bg-blue-100 px-5 py-3 w-full text-sm font-medium text-blue-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-not-allowed 
+ }
