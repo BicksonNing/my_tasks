@@ -30,3 +30,18 @@
  .btn-disabled {
   @apply inline-flex items-center space-x-3 justify-center rounded-md border border-transparent bg-blue-100 px-5 py-3 w-full text-sm font-medium text-blue-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 cursor-not-allowed 
  }
+
+
+ .onhold {
+  @apply px-6 max-w-min py-1 rounded-full text-xs font-medium bg-red-300 whitespace-nowrap text-center
+ }
+
+
+ .pending {
+  @apply px-6 py-1 rounded-full text-xs font-medium bg-yellow-300 whitespace-nowrap text-center max-w-min
+ }
+
+
+ .completed{
+  @apply px-6 max-w-min py-1 rounded-full text-xs font-medium bg-green-300 whitespace-nowrap text-center
+ }

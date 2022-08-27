@@ -1,11 +1,17 @@
 // icons
-import moment from "moment";
-import { useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { FaRegClock } from "react-icons/fa";
+
+// date formater
+import moment from "moment";
+
+// components
 import GlassButton from "./GlassButton";
 import Pagination from "./Pagination";
 import TaskForm from "./TaskForm";
+
+// hooks
+import { useState } from "react";
 
 function RecentTasks({ tasks }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -14,13 +20,8 @@ function RecentTasks({ tasks }) {
   const indexOfFirstTask = indexOfLastTask - tasksPerPage;
   const currentTask = tasks.slice(indexOfFirstTask, indexOfLastTask);
   const nPages = Math.ceil(tasks.length / tasksPerPage);
-
   const [isOpen, setIsOpen] = useState(false);
   const [isUpdate, setIsUpdate] = useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
 
   const [selectedData, setSelectedData] = useState({
     id: "",
@@ -30,6 +31,10 @@ function RecentTasks({ tasks }) {
     status: "",
   });
 
+  function openModal() {
+    setIsOpen(true);
+  }
+
   // updateTask
   const updateTask = (id, title, description, date, status) => {
     setIsOpen(true);
@@ -38,7 +43,7 @@ function RecentTasks({ tasks }) {
   };
 
   return (
-    <div className='space-y-8'>
+    <div className='space-y-6'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center space-x-3'>
           <FaRegClock size={20} className='text-blue-600 mt-1' />
@@ -89,17 +94,11 @@ function RecentTasks({ tasks }) {
                 </td>
                 <td className='py-4 px-6'>
                   {task.data().status === "onhold" ? (
-                    <div className='px-6 max-w-min py-1 rounded-full text-xs font-medium bg-red-300 whitespace-nowrap text-center'>
-                      On Hold
-                    </div>
+                    <div className='onhold'>On Hold</div>
                   ) : task.data().status === "pending" ? (
-                    <div className='px-6 py-1 rounded-full text-xs font-medium bg-yellow-300 whitespace-nowrap text-center max-w-min'>
-                      Pending
-                    </div>
+                    <div className='pending'>Pending</div>
                   ) : (
-                    <div className='px-6 max-w-min py-1 rounded-full text-xs font-medium bg-green-300 whitespace-nowrap text-center'>
-                      Completed
-                    </div>
+                    <div className='completed'>Completed</div>
                   )}
                 </td>
                 <td className='py-4 px-6 text-right'>
@@ -113,7 +112,7 @@ function RecentTasks({ tasks }) {
                         task.data().status
                       )
                     }
-                    className='font-medium text-blue-600 dark:text-blue-500  active:scale-110 duration-200 ease-in-out'
+                    className='font-medium text-blue-600 dark:text-blue-500 active:scale-110 duration-200 ease-in-out'
                   >
                     <AiOutlineEdit size={23} />
                   </button>
@@ -123,12 +122,14 @@ function RecentTasks({ tasks }) {
           </tbody>
         </table>
       </div>
-      {/* pagination */}
+      {/* Pagination */}
       <Pagination
         nPages={nPages}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
+
+      {/* Taskform */}
       <TaskForm
         isUpdate={isUpdate}
         setIsUpdate={setIsUpdate}

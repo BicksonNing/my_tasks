@@ -1,10 +1,8 @@
-import React from "react";
-
 // images
-import totalImage from "../assets/total.png";
 import completeImage from "../assets/complete1.png";
-import pendingImage from "../assets/pending.png";
 import holdImage from "../assets/hold.png";
+import pendingImage from "../assets/pending.png";
+import totalImage from "../assets/total.png";
 
 function TaskTiles({ tasks }) {
   const completedTask = tasks.filter(

@@ -10,14 +10,9 @@ import { About, Home } from "./pages";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleHandler = () => {
     setIsOpen(!isOpen);
-  };
-
-  const toggleMenuHandler = () => {
-    setIsMenuOpen(!isMenuOpen);
   };
 
   return (

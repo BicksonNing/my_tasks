@@ -14,35 +14,35 @@ function Pagination({ nPages, currentPage, setCurrentPage }) {
     <nav aria-label='Page navigation example'>
       <ul className='inline-flex -space-x-px'>
         <li>
-          <a
+          <button
             onClick={prevPage}
             className='py-2 px-3 ml-0 leading-tight text-gray-500 glass rounded-l-lg border border-gray-300 hover:text-black hover:bg-gray-100/10'
           >
             Previous
-          </a>
+          </button>
         </li>
         {pageNumbers.map((pgNumber) => (
           <li key={pgNumber}>
-            <a
+            <button
               onClick={() => setCurrentPage(pgNumber)}
               className={
-                currentPage == pgNumber
+                currentPage === pgNumber
                   ? "py-2 px-3 leading-tight text-gray-500 glass-thick border border-gray-300  "
                   : "py-2 px-3 leading-tight text-gray-500 glass border border-gray-300 hover:bg-gray-100/10"
               }
             >
               {pgNumber}
-            </a>
+            </button>
           </li>
         ))}
 
         <li>
-          <a
+          <button
             onClick={nextPage}
             className='py-2 px-3 leading-tight text-gray-500 glass rounded-r-lg border border-gray-300 hover:bg-gray-100/10 hover:text-black'
           >
             Next
-          </a>
+          </button>
         </li>
       </ul>
     </nav>
